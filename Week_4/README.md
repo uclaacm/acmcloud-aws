@@ -40,7 +40,12 @@ Now we can take the following steps to provision our Elastic Beanstalk environme
 7. In this repo, update the `Name` field of the `Dockerrun.aws.json` file to point to the image you deployed before. Click **Choose file** and upload the `Dockerrun.aws.json` file in the repo. This file specifies the docker image to use, as well as the port mapping
 8. Scroll down and click **next**. Click "Create and use new service role"
 9. Select the IAM Role you'd created from the EC2 instance profile dropdown
-10. Click the "skip to review" button and press "submit"
+10. Click on Next until you reach Step 4, which is "Instance Traffic and Scaling"
+11. Set the Root volume type to General Purpose 3 (gp3)
+12. Ensure that IMDSv1 is Deactivated and capacity is configured as Spot Instance
+13. Click on "skip to review" button and press "submit"
+
+Steps 10-12 are only neccessary on new EB enviornments for accounts created after October 1 2024. Refer to these [docs](https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environments-cfg-autoscaling-launch-templates.html) for more info
 
 After a couple minutes, your Elastic Beanstalk application should transition from the pending to the Ok state. Proceed to click the **Domain** listed and view the deployed application.
 
