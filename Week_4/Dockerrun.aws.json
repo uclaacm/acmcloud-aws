@@ -1,7 +1,7 @@
 {
     "AWSEBDockerrunVersion": "1",
     "Image": {
-      "Name": "satyensub/cloud-aws-demo-wk4",
+      "Name": "arjun1311/demo-image",
       "Update": "true"
     },
     "Ports": [
